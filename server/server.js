@@ -15,6 +15,12 @@ mongoose.connect(mongoURI);
 
 app.use("/build", express.static(path.join(__dirname, "../build")));
 
+app.get("/api/database", itemController.dbQuery, (req, res) => {
+  console.log("At server.js GET to database");
+  // console.log("res.locals", res.locals);
+  return res.status(200).send(res.locals.dbData);
+});
+
 // handle get requests to root
 app.get("/", (req, res) => {
   console.log("At server.js get to root");
@@ -27,6 +33,11 @@ app.post("/api", itemController.addItem, (req, res) => {
   return res.status(200).send(res.locals.newItem);
 });
 
+app.delete("/api/removeItem", itemController.deleteItem, (req, res) => {
+  console.log("At server.js DELETE request to database");
+  return res.status(200).send(res.locals.deletedItem);
+});
+
 // catch-all
 app.use((req, res) =>
   res.status(404).send("This is not the page you're looking for...")
@@ -34,14 +45,15 @@ app.use((req, res) =>
 
 // global error handler
 app.use((err, req, res, next) => {
+  console.log("Global error handler triggered");
   const defaultErr = {
     log: "Express error handler caught unknown middleware error",
     status: 500,
     message: { err: "An error occurred" },
   };
   const errorObj = Object.assign({}, defaultErr, err);
-  console.log(errorObj.message);
-  return res.status(errorObj.status).json(errorObj.log);
+  console.log(errorObj.log);
+  return res.status(errorObj.status).json(errorObj.message);
 });
 
 // server start

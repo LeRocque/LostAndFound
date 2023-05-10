@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Inventory from "./Inventory";
 
 const App = () => {
   // initialize newItem variable and setNewItem func from useState
@@ -46,6 +47,7 @@ const App = () => {
         />
         <input type="submit" value="Submit" />
       </form>
+      <Inventory newItem={newItem} />
     </div>
   );
 };
