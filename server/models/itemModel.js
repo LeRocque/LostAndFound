@@ -10,7 +10,10 @@ const itemSchema = new Schema({
       const date = new Date();
       return `${
         date.getMonth() + 1
-      }/${date.getDate()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`;
+      }/${date.getDate()}/${date.getFullYear()} ${date
+        .getHours()
+        .toString()
+        .padStart(2, "0")}:${date.getMinutes().toString().padStart(2, "0")}`;
     },
   },
 });

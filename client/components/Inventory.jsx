@@ -19,6 +19,12 @@ const Inventory = ({ newItem }) => {
   }, [newItem]);
 
   const onDelete = async (id) => {
+    const confirmation = confirm(
+      "WARNING, claiming this item will permanently remove it from the lost and found"
+    );
+    if (!confirmation) {
+      return;
+    }
     try {
       const removed = await fetch("/api/removeItem", {
         method: "DELETE",
@@ -28,7 +34,6 @@ const Inventory = ({ newItem }) => {
         body: JSON.stringify({ _id: id }),
       });
       const deletedItem = await removed.json();
-      console.log(deletedItem);
       setDbData(dbData.filter((el) => el._id !== id));
     } catch (err) {
       console.error(err);
@@ -39,8 +44,9 @@ const Inventory = ({ newItem }) => {
     <div id="dbContainer">
       {dbData.map(({ _id, itemName, foundOn }) => (
         <div key={_id}>
-          <button onClick={() => onDelete(_id)}>{itemName}</button>
+          <p>{itemName}</p>
           <p>{foundOn}</p>
+          <button onClick={() => onDelete(_id)}>Click me to claim item</button>
         </div>
       ))}
     </div>

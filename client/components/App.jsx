@@ -20,7 +20,6 @@ const App = () => {
       });
       // initialize data to the awaited result of converting result from a json to an object
       const data = await result.json();
-      console.log(data);
       // reset setNewItem input field
       setNewItem("");
       // catch errors and console.error them
@@ -37,6 +36,7 @@ const App = () => {
 
   return (
     <div>
+      <h2>Please input the name of the item you are returning below</h2>
       <form onSubmit={handleSubmit}>
         <input
           name="newItem"
@@ -47,6 +47,12 @@ const App = () => {
         />
         <input type="submit" value="Submit" />
       </form>
+      <h3>
+        Below you will see items returned by other cohort mates
+        <br />
+        These items include a description, the date at which they were found,
+        and the time at which they were submitted to the Lost and Found
+      </h3>
       <Inventory newItem={newItem} />
     </div>
   );
