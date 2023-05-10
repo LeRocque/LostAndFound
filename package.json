@@ -1,12 +1,12 @@
 {
-  "name": "",
+  "name": "lost",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production nodemon server/server.js",
     "build": "webpack",
-    "dev": "NODE_ENV=development webpack serve --open",
+    "dev": " node server/server.js & webpack serve --open",
     "gulp-prod": "node_modules/.bin/gulp prod",
     "gulp-dev": "node_modules/.bin/gulp dev",
     "format": "prettier --write \"**/*.{js,jsx}\""
@@ -34,7 +34,7 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.2",
-    "concurrently": "^6.0.2",
+    "concurrently": "^6.5.1",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.1",

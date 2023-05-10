@@ -10,7 +10,7 @@ const App = () => {
     e.preventDefault();
     // intialize awaited fetch request with a method of POST, headers that send a json, and a body that sends an itemName with the value of newItem as a json
     try {
-      const result = await fetch("/", {
+      const result = await fetch("/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

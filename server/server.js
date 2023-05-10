@@ -17,11 +17,12 @@ app.use("/build", express.static(path.join(__dirname, "../build")));
 
 // handle get requests to root
 app.get("/", (req, res) => {
+  console.log("At server.js get to root");
   return res.status(200).sendFile(path.join(__dirname, "../index.html"));
 });
 
 // handle post requests to root
-app.post("/", itemController.addItem, (req, res) => {
+app.post("/api", itemController.addItem, (req, res) => {
   console.log("At server.js post to root");
   return res.status(200).send(res.locals.newItem);
 });

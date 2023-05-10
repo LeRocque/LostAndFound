@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 module.exports = {
-  mode: process.env.NODE_ENV,
+  mode: "development",
   entry: "./client/index.js",
   output: {
     filename: "./bundle.js",
@@ -20,9 +20,8 @@ module.exports = {
       directory: path.join(__dirname),
     },
     compress: true,
-    port: 8080,
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api/*": "http://localhost:3000",
     },
   },
   module: {
