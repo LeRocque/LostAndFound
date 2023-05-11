@@ -43,10 +43,10 @@ const Inventory = ({ newItem }) => {
   return (
     <div id="dbContainer">
       {dbData.map(({ _id, itemName, foundOn }) => (
-        <div key={_id}>
+        <div key={_id} className="dbDoc">
           <p>{itemName}</p>
           <p>{foundOn}</p>
-          <button onClick={() => onDelete(_id)}>Click me to claim item</button>
+          <button onClick={() => onDelete(_id)}>Click to claim me 🚀</button>
         </div>
       ))}
     </div>

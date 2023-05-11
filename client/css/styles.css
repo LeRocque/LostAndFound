@@ -1,15 +1,56 @@
 body {
-  background-color: lightblue;
+  color: rgb(212, 221, 220);
+  background-image: linear-gradient(
+    to right,
+    rgb(99, 175, 201),
+    rgb(43, 50, 148)
+  );
+  /* background-image: url(../Images/background2.gif);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
 }
 
 h1 {
   font-family: "Caveat", cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 h2 {
   font-family: "Source Code Pro", monospace;
 }
 
-h3 {
+p {
   font-family: "Quicksand", sans-serif;
+}
+
+#top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#dbContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  text-align: center;
+}
+
+.dbDoc {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.5);
+  background-color: rgba(3, 3, 3, 0.2);
+  color: rgb(196, 193, 230);
+}
+
+.dbDoc button {
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }

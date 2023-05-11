@@ -36,23 +36,24 @@ const App = () => {
 
   return (
     <div>
-      <h2>Please input the name of the item you are returning below</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="newItem"
-          value={newItem}
-          type="text"
-          placeholder="Name of Found Item"
-          onChange={handleInputChange}
-        />
-        <input type="submit" value="Submit" />
-      </form>
-      <h3>
-        Below you will see items returned by other cohort mates
-        <br />
-        These items include a description, the date at which they were found,
-        and the time at which they were submitted to the Lost and Found
-      </h3>
+      <div id="top">
+        <h2>Please input the name of the item you are returning below</h2>
+        <form onSubmit={handleSubmit}>
+          <input
+            name="newItem"
+            value={newItem}
+            type="text"
+            placeholder="Name of Found Item"
+            onChange={handleInputChange}
+          />
+          <input type="submit" value="Submit" />
+        </form>
+        <p>Below you will see items returned by other cohort mates.</p>
+        <p>
+          These items include a description, the date at which they were found,
+        </p>
+        <p>and the time at which they were submitted to the Lost and Found.</p>
+      </div>
       <Inventory newItem={newItem} />
     </div>
   );
