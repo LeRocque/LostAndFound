@@ -1,15 +1,15 @@
 body {
-  color: rgb(212, 221, 220);
-  background-image: linear-gradient(
+  color: black;
+  /* background-image: linear-gradient(
     to right,
     rgb(99, 175, 201),
     rgb(43, 50, 148)
-  );
-  /* background-image: url(../Images/background2.gif);
+  ); */
+  background-image: url(../Images/duckbath.gif);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; */
+  background-size: cover;
 }
 
 h1 {
@@ -28,11 +28,45 @@ p {
   font-family: "Quicksand", sans-serif;
 }
 
+#parent {
+  display: flex;
+  flex-direction: column;
+}
+
 #top {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: 5px;
+  box-shadow: 5px 5px 9px 7px rgba(0, 0, 0, 0.7);
+  background-color: rgba(3, 3, 3, 0.4);
+  width: fit-content;
+  align-self: center;
+  padding: 1rem;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#form {
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+#submit {
+  background-color: rgba(0, 0, 255, 0.5);
+  color: white;
+}
+
+#submit:hover {
+  background-color: rgba(0, 0, 255, 0.9);
+  cursor: pointer;
+}
+
+#top:hover {
+  background-color: rgba(3, 3, 3, 0.8);
 }
 
 #dbContainer {
@@ -45,12 +79,44 @@ p {
   margin: 1rem;
   padding: 1rem;
   border-radius: 5px;
-  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.5);
   background-color: rgba(3, 3, 3, 0.2);
-  color: rgb(196, 193, 230);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.dbDoc:hover {
+  background-color: rgba(3, 3, 3, 0.8);
 }
 
 .dbDoc button {
   border-radius: 5px;
-  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+  color: white;
+  background-color: rgba(0, 0, 255, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.dbDoc button:hover {
+  background-color: rgba(0, 0, 255, 0.9);
+  cursor: pointer;
+}
+
+.stock {
+  background-color: rgba(208, 52, 179, 0.5);
+  color: white;
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 5px;
+  width: fit-content;
+  align-self: center;
+  justify-content: center;
+  margin: 0.4rem;
+  transition: background-color 0.3s ease;
+}
+
+.stock:hover {
+  background-color: rgba(208, 52, 179, 0.9);
 }
