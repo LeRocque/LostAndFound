@@ -58,15 +58,17 @@ const Inventory = ({ newItem }) => {
 
   return (
     <div>
-      <div className="dropdown">
-        <button className="dropbtn">Sort By:</button>
-        <div className="dropdown-content">
-          <ul>
-            <li onClick={sortAZ}>Item Name A-Z</li>
-            <li onClick={sortZA}>Item Name Z-A</li>
-            <li onClick={sortDateLast}>Date Found Last-First</li>
-            <li onClick={sortDateFirst}>Date Found First-Last</li>
-          </ul>
+      <div id="outerbox">
+        <div className="dropdown">
+          <button className="dropbtn">Hover Over me to Sort</button>
+          <div className="dropdown-content">
+            <ul>
+              <li onClick={sortAZ}>Item Name A-Z</li>
+              <li onClick={sortZA}>Item Name Z-A</li>
+              <li onClick={sortDateLast}>Date Found Last-First</li>
+              <li onClick={sortDateFirst}>Date Found First-Last</li>
+            </ul>
+          </div>
         </div>
       </div>
       <div id="dbContainer">

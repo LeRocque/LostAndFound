@@ -121,28 +121,68 @@ p {
   background-color: rgba(208, 52, 179, 0.9);
 }
 
+#outerbox {
+  display: flex;
+  flex-direction: column;
+}
+
 .dropdown {
-  display: inline-block;
-  position: relative;
+  margin-top: 1rem;
+  align-self: center;
+  justify-content: center;
+  max-width: 10rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: white;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  align-self: center;
+  justify-content: center;
+  background-color: rgba(3, 3, 3, 0.8);
+  width: 14rem;
+  color: white;
+  padding: 0;
+  margin: 0;
 }
 
 .dropdown-content ul {
-  display: block;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-content li {
+  align-self: center;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin-right: 0.9rem;
+}
+
+.dropdown-content li::before {
+  content: "🐤";
+  margin-right: 0.5rem;
+}
+
+.dropdown-content li:hover {
+  background-color: rgba(208, 52, 179, 0.9);
+  cursor: pointer;
 }
 
 .dropdown:hover .dropdown-content {
-  display: block;
+  display: flex;
+}
+
+.dropbtn {
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.7);
+  color: white;
+  background-color: rgba(0, 0, 255, 0.5);
+  transition: background-color 0.3s ease;
 }
 
 .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: rgba(0, 0, 255, 0.9);
+  cursor: pointer;
 }
