@@ -21,6 +21,11 @@ app.get("/api/database", itemController.dbQuery, (req, res) => {
   return res.status(200).send(res.locals.dbData);
 });
 
+app.get("/api/sortAZ", itemController.sortAZ, (req, res) => {
+  console.log("At server.js GET to sortAZ");
+  return res.status(200);
+});
+
 // handle get requests to root
 app.get("/", (req, res) => {
   console.log("At server.js get to root");

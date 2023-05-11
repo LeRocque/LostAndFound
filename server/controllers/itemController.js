@@ -47,10 +47,31 @@ itemController.deleteItem = async (req, res, next) => {
   try {
     const removed = await Item.findOneAndDelete({ _id: _id });
     res.locals.deletedItem = removed;
-    next();
+    return next();
   } catch (err) {
     const errMessage = {
       log: "Error occured in itemController.deleteItem",
+      status: 400,
+      message: { err },
+    };
+    return next(errMessage);
+  }
+};
+
+itemController.sortAZ = async (req, res, next) => {
+  console.log("At sortAZ controller");
+  try {
+    const sorted = await Item.find().sort({ itemName: 1 }).exec();
+
+    const updatePromises = sorted.map((doc, index) =>
+      Item.findByIdAndUpdate(doc._id, { sortOrder: index + 1 })
+    );
+
+    await Promise.all(updatePromises);
+    return next();
+  } catch (err) {
+    const errMessage = {
+      log: "Error occured in itemController.sortAZ",
       status: 400,
       message: { err },
     };
