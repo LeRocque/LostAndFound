@@ -1,15 +1,17 @@
 body {
   color: black;
+  /* Use me without dev  */
   /* background-image: linear-gradient(
     to right,
     rgb(99, 175, 201),
     rgb(43, 50, 148)
   ); */
+
+  /* Use me with dev */
   background-image: url(../Images/duckbath.gif);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 h1 {
